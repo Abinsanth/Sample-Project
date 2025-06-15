@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>My Personal Dashboard</h1>
+    <nav>
+      <a href="#to-do">To-Do</a>
+      <a href="#gallery">Images</a>
+      <a href="#contact">Contact Me</a>
+    </nav>
+  </header>
+
+  <div class="main">
+    <div class="section" id="to-do">
+      <h2>To-Do List</h2>
+      <input type="text" id="taskInput" placeholder="Enter the Task" />
+      <button onclick="addTask()">Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+
+    <div class="section" id="gallery">
+      <h2>Add Images</h2>
+      <input type="file" id="imageInput" accept="image/*" />
+      <button onclick="addImageFromDevice()">Add Image</button>
+      <div id="galleryContainer"></div>
+    </div>
+  </div>
+
+  <div class="section" id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm" onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Your name" required />
+      <input type="email" id="email" placeholder="Your email" required />
+      <textarea id="message" placeholder="Enter your message" rows="4" required></textarea>
+      <button type="submit">SEND</button>
+      <p id="error" style="color: red;"></p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
